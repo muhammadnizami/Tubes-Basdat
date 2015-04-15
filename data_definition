@@ -58,7 +58,7 @@ CREATE TABLE memiliki_tempat_hanggar
 );
 
 CREATE TABLE pesawat(
-	kode_pesawat INT PRIMARY KEY,
+	kode_pesawat CHAR(7) PRIMARY KEY,
 	kapasitas_penumpang INT,
 	jenis CHAR(10),
 	kondisi CHAR(10),
@@ -67,14 +67,14 @@ CREATE TABLE pesawat(
 );
 
 CREATE TABLE a330(
-	kode_pesawat INT PRIMARY KEY,
+	kode_pesawat CHAR(7) PRIMARY KEY,
 	no_produksi INT,
 	spesifikasi_mesin INT,
 	FOREIGN KEY (kode_pesawat) REFERENCES pesawat(kode_pesawat)
 );
 
 CREATE TABLE cessna(
-	kode_pesawat INT PRIMARY KEY,
+	kode_pesawat CHAR(7) PRIMARY KEY,
 	pabrik VARCHAR(30),
 	FOREIGN KEY (kode_pesawat) REFERENCES pesawat(kode_pesawat)
 );
