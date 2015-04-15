@@ -80,7 +80,7 @@ CREATE TABLE cessna(
 );
 
 CREATE TABLE boeing_737(
-	kode_pesawat INT PRIMARY KEY,
+	kode_pesawat CHAR(7) PRIMARY KEY,
 	tanggal_masuk DATE,
 	no_produksi INT,
 	FOREIGN KEY (kode_pesawat) REFERENCES pesawat(kode_pesawat)
@@ -98,7 +98,7 @@ CREATE TABLE keberangkatan
 	no_penerbangan CHAR(8),
 	departure_time DATETIME,#tipe tidak standar. nanti ditanyakan lagi
 	arrival_time DATETIME,
-	kode_pesawat INT,
+	kode_pesawat CHAR(7),
 	PRIMARY KEY (no_penerbangan, departure_time),
 	FOREIGN KEY (no_penerbangan) REFERENCES penerbangan(no_penerbangan),
 	FOREIGN KEY (kode_pesawat) REFERENCES pesawat(kode_pesawat)
