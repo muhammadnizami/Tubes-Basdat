@@ -111,7 +111,7 @@ CREATE TABLE penumpang
 
 CREATE TABLE aboard
 (
-	no_tiket INT(7) NOT NULL UNIQUE,
+	no_tiket INT(14) NOT NULL UNIQUE,
 	nama CHAR(36),
 	no_kursi CHAR(3),
 	no_penerbangan CHAR(8),
