@@ -1,7 +1,6 @@
 #tulis perintah pembuatan basis data sistem penerbangan di berkas ini
 #komentar
 /*komentar*/
---komentar
 #cara membuat: copy-paste semua ke mysql
 
 
@@ -16,16 +15,6 @@ CREATE TABLE penerbangan
 	no_penerbangan CHAR(8) PRIMARY KEY, 	#IATA FLIGHT DESIGNATOR
 	asal CHARACTER(3),			#IATA AIRPORT CODE
 	tujuan CHARACTER(3)			#IATA AIRPORT CODE
-);
-
-CREATE TABLE keberangkatan
-(
-	no_penerbangan CHAR(8),
-	departure_time DATETIME,#tipe tidak standar. nanti ditanyakan lagi
-	arrival_time DATETIME,
-	#kode_pesawat 	belum dapat didefinisikan.
-	PRIMARY KEY (no_penerbangan, departure_time),
-	FOREIGN KEY (no_penerbangan) REFERENCES penerbangan(no_penerbangan)
 );
 
 CREATE TABLE landasan
@@ -64,3 +53,24 @@ CREATE TABLE maskapai_internasional
 	FOREIGN KEY (no_perusahaan) REFERENCES maskapai(no_perusahaan)	
 );
 
+CREATE TABLE memiliki_tempat_hanggar
+(
+	no_perusahaan INT,
+	no_hanggar INT,
+	id_landasan INT,
+	FOREIGN KEY (no_perusahaan) REFERENCES maskapai(no_perusahaan),
+	FOREIGN KEY (id_landasan,no_hanggar) REFERENCES hanggar(id_landasan,no_hanggar),
+	PRIMARY KEY (no_perusahaan,no_hanggar,id_landasan)
+);
+
+#TODO pesawat
+
+CREATE TABLE keberangkatan
+(
+	no_penerbangan CHAR(8),
+	departure_time DATETIME,#tipe tidak standar. nanti ditanyakan lagi
+	arrival_time DATETIME,
+	#TODO kode_pesawat 	belum dapat didefinisikan. Lihat tabel pesawat
+	PRIMARY KEY (no_penerbangan, departure_time),
+	FOREIGN KEY (no_penerbangan) REFERENCES penerbangan(no_penerbangan)
+);
