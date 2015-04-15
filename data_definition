@@ -10,12 +10,6 @@ USE Sistem_Penerbangan;
 
 #Tabel-tabel
 
-CREATE TABLE penerbangan
-(
-	no_penerbangan CHAR(8) PRIMARY KEY, 	#IATA FLIGHT DESIGNATOR
-	asal CHARACTER(3),			#IATA AIRPORT CODE
-	tujuan CHARACTER(3)			#IATA AIRPORT CODE
-);
 
 CREATE TABLE landasan
 (
@@ -90,6 +84,13 @@ CREATE TABLE boeing_737(
 	tanggal_masuk DATE,
 	no_produksi INT,
 	FOREIGN KEY (kode_pesawat) REFERENCES pesawat(kode_pesawat)
+);
+
+CREATE TABLE penerbangan
+(
+	no_penerbangan CHAR(8) PRIMARY KEY, 	#IATA FLIGHT DESIGNATOR
+	asal CHARACTER(3),			#IATA AIRPORT CODE
+	tujuan CHARACTER(3)			#IATA AIRPORT CODE
 );
 
 CREATE TABLE keberangkatan
