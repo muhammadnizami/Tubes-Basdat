@@ -63,14 +63,59 @@ CREATE TABLE memiliki_tempat_hanggar
 	PRIMARY KEY (no_perusahaan,no_hanggar,id_landasan)
 );
 
-#TODO pesawat
+CREATE TABLE pesawat(
+	kode_pesawat INT PRIMARY KEY,
+	kapasitas_penumpang INT,
+	jenis CHAR(10),
+	kondisi CHAR(10),
+	no_perusahaan INT,
+	FOREIGN KEY (no_perusahaan) REFERENCES maskapai(no_perusahaan)
+);
+
+CREATE TABLE a330(
+	kode_pesawat INT PRIMARY KEY,
+	no_produksi INT,
+	spesifikasi_mesin INT,
+	FOREIGN KEY (kode_pesawat) REFERENCES pesawat(kode_pesawat)
+);
+
+CREATE TABLE cessna(
+	kode_pesawat INT PRIMARY KEY,
+	pabrik VARCHAR(30),
+	FOREIGN KEY (kode_pesawat) REFERENCES pesawat(kode_pesawat)
+);
+
+CREATE TABLE boeing_737(
+	kode_pesawat INT PRIMARY KEY,
+	tanggal_masuk DATE,
+	no_produksi INT,
+	FOREIGN KEY (kode_pesawat) REFERENCES pesawat(kode_pesawat)
+);
 
 CREATE TABLE keberangkatan
 (
 	no_penerbangan CHAR(8),
 	departure_time DATETIME,#tipe tidak standar. nanti ditanyakan lagi
 	arrival_time DATETIME,
-	#TODO kode_pesawat 	belum dapat didefinisikan. Lihat tabel pesawat
+	kode_pesawat INT,
 	PRIMARY KEY (no_penerbangan, departure_time),
-	FOREIGN KEY (no_penerbangan) REFERENCES penerbangan(no_penerbangan)
+	FOREIGN KEY (no_penerbangan) REFERENCES penerbangan(no_penerbangan),
+	FOREIGN KEY (kode_pesawat) REFERENCES pesawat(kode_pesawat)
+);
+
+CREATE TABLE penumpang
+(
+	nama CHAR(36) PRIMARY KEY
+);
+
+CREATE TABLE aboard
+(
+	no_tiket INT(7) NOT NULL UNIQUE,
+	nama CHAR(36),
+	no_kursi CHAR(3),
+	no_penerbangan CHAR(8),
+	departure_time DATETIME,
+	PRIMARY KEY (nama,no_penerbangan,departure_time),
+	FOREIGN KEY (no_penerbangan,departure_time) REFERENCES keberangkatan(no_penerbangan,departure_time),
+	FOREIGN KEY (nama) REFERENCES penumpang(nama)
 );
