@@ -17,3 +17,28 @@ CREATE TABLE penerbangan
 	asal CHARACTER(3),			#IATA AIRPORT CODE
 	tujuan CHARACTER(3)			#IATA AIRPORT CODE
 );
+
+CREATE TABLE keberangkatan
+(
+	no_penerbangan VARCHAR(8),
+	departure_time DATETIME,#tipe tidak standar. nanti ditanyakan lagi
+	arrival_time DATETIME,
+	#kode_pesawat 	belum dapat didefinisikan.
+	PRIMARY KEY (no_penerbangan, departure_time),
+	FOREIGN KEY (no_penerbangan) REFERENCES penerbangan(no_penerbangan)
+);
+
+CREATE TABLE landasan
+(
+	id_landasan INT,
+	kapasitas_maksimum INT UNSIGNED,
+	PRIMARY KEY (id_landasan)
+);
+
+CREATE TABLE hanggar
+(
+	id_landasan INT,
+	no_hanggar INT,
+	PRIMARY KEY (id_landasan, no_hanggar),
+	FOREIGN KEY (id_landasan) REFERENCES landasan(id_landasan)
+);
