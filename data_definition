@@ -13,14 +13,14 @@ USE Sistem_Penerbangan;
 
 CREATE TABLE penerbangan
 (
-	no_penerbangan VARCHAR(8) PRIMARY KEY, 	#IATA FLIGHT DESIGNATOR
+	no_penerbangan CHAR(8) PRIMARY KEY, 	#IATA FLIGHT DESIGNATOR
 	asal CHARACTER(3),			#IATA AIRPORT CODE
 	tujuan CHARACTER(3)			#IATA AIRPORT CODE
 );
 
 CREATE TABLE keberangkatan
 (
-	no_penerbangan VARCHAR(8),
+	no_penerbangan CHAR(8),
 	departure_time DATETIME,#tipe tidak standar. nanti ditanyakan lagi
 	arrival_time DATETIME,
 	#kode_pesawat 	belum dapat didefinisikan.
@@ -42,3 +42,25 @@ CREATE TABLE hanggar
 	PRIMARY KEY (id_landasan, no_hanggar),
 	FOREIGN KEY (id_landasan) REFERENCES landasan(id_landasan)
 );
+
+CREATE TABLE maskapai
+(
+	no_perusahaan 	INT 	PRIMARY KEY,
+	nama VARCHAR(50)
+);
+
+CREATE TABLE maskapai_domestik
+(
+	no_perusahaan INT PRIMARY KEY,
+	no_surat_kemenhub CHAR (16),
+	FOREIGN KEY (no_perusahaan) REFERENCES maskapai(no_perusahaan)
+);
+
+CREATE TABLE maskapai_internasional
+(
+	no_perusahaan INT PRIMARY KEY,
+	no_surat_izin CHAR (16),
+	negara CHAR(2), #lihat ISO COUNTRY CODE http://www.airlinecodes.co.uk/country.asp
+	FOREIGN KEY (no_perusahaan) REFERENCES maskapai(no_perusahaan)	
+);
+
