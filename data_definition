@@ -104,6 +104,15 @@ CREATE TABLE keberangkatan
 	FOREIGN KEY (kode_pesawat) REFERENCES pesawat(kode_pesawat)
 );
 
+CREATE TABLE rusak_dan_diganti
+(
+	no_penerbangan CHAR(8),
+	departure_time DATETIME,
+	kode_pesawat CHAR(7)
+	PRIMARY KEY (no_penerbangan, departure_time),
+	FOREIGN KEY (no_penerbangan, departure_time) REFERENCES keberangkatan(no_penerbangan, departure_time)
+);
+
 CREATE TABLE penumpang
 (
 	nama CHAR(36) PRIMARY KEY
