@@ -108,7 +108,7 @@ CREATE TABLE rusak_dan_diganti
 (
 	no_penerbangan CHAR(8),
 	departure_time DATETIME,
-	kode_pesawat CHAR(7)
+	kode_pesawat CHAR(7),
 	PRIMARY KEY (no_penerbangan, departure_time),
 	FOREIGN KEY (no_penerbangan, departure_time) REFERENCES keberangkatan(no_penerbangan, departure_time)
 );
