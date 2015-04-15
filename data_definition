@@ -2,3 +2,18 @@
 #komentar
 /*komentar*/
 --komentar
+#cara membuat: copy-paste semua ke mysql
+
+
+CREATE DATABASE Sistem_Penerbangan;
+
+USE Sistem_Penerbangan;
+
+#Tabel-tabel
+
+CREATE TABLE penerbangan
+(
+	no_penerbangan VARCHAR(8) PRIMARY KEY, 	#IATA FLIGHT DESIGNATOR
+	asal CHARACTER(3),			#IATA AIRPORT CODE
+	tujuan CHARACTER(3)			#IATA AIRPORT CODE
+);
