@@ -1,4 +1,194 @@
 #tulis perintah inisialisasi data pada basis data sistem penerbangan di berkas ini
 #komentar
 /*komentar*/
---komentar
+
+#tulis perintah pembuatan basis data sistem penerbangan di berkas ini
+#komentar
+/*komentar*/
+#cara membuat: copy-paste semua ke mysql
+
+
+USE Sistem_Penerbangan;
+
+#rekord-rekord
+
+
+INSERT INTO landasan(
+	id_landasan,
+	kapasitas_maksimum
+)
+VALUES
+	(1,10)
+;
+
+INSERT INTO hanggar
+(
+	id_landasan,
+	no_hanggar
+)
+VALUES
+	(1,1)
+;
+
+INSERT INTO maskapai
+(
+	no_perusahaan,
+	nama
+)
+VALUES
+	(3,"AIR ASIA"),
+	(2,"DUMMY AIR")
+;
+
+INSERT INTO maskapai_domestik
+(
+	no_perusahaan,
+	no_surat_kemenhub
+)
+VALUES
+	(3, "MENHUB/2003/LALALA")
+;
+
+INSERT INTO maskapai_internasional
+(
+	no_perusahaan,
+	no_surat_izin,
+	negara
+)
+VALUES
+	(2,"SUB/1995/LALALA","US")
+;
+
+INSERT INTO memiliki_tempat_hanggar
+(
+	no_perusahaan,
+	no_hanggar,
+	id_landasan
+)
+VALUES
+	(3,1,1)
+;
+
+INSERT INTO pesawat(
+	kode_pesawat,
+	kapasitas_penumpang,
+	jenis,
+	kondisi,
+	no_perusahaan
+)
+VALUES
+	("PK-AXC",150,"A330","BAIK",3),
+	("PK-AXD",150,"Cessna","BAIK",2),
+	("PK-AXE",300,"Boeing 737","BAIK",3)
+;
+
+INSERT INTO a330(
+	kode_pesawat,
+	no_produksi,
+	spesifikasi_mesin
+)
+VALUES
+	("PK-AXC",1010,0)
+;
+
+INSERT INTO cessna(
+	kode_pesawat,
+	pabrik
+)
+VALUES
+	("PK-AXD","TRI ANGKASA")
+;
+
+INSERT INTO boeing_737(
+	kode_pesawat,
+	tanggal_masuk,
+	no_produksi
+)
+VALUES
+	("PK-AXE",'2010-01-01',1011)
+;
+
+
+INSERT INTO penerbangan (
+	no_penerbangan , 	#IATA FLIGHT DESIGNATOR
+	asal,			#IATA AIRPORT CODE
+	tujuan			#IATA AIRPORT CODE
+)
+VALUES
+	("QZ8501","SUB","SIN")
+;
+
+INSERT INTO keberangkatan
+(
+	no_penerbangan,
+	departure_time,
+	arrival_time,
+	kode_pesawat
+)
+VALUES
+	("QZ8501",'2014-12-28 05:20:00','2014-12-28 08:30:00',"PK-AXC"),
+	("QZ8501",'2015-01-04 05:20:00','2015-01-04 08:30:00',"PK-AXC")
+;
+
+INSERT INTO rusak_dan_diganti
+(
+	no_penerbangan,
+	departure_time,
+	kode_pesawat
+)
+VALUES
+	("QZ8501",'2015-01-04 05:20:00',"PK-AXE")
+;
+
+INSERT INTO penumpang
+(
+	nama
+)
+VALUES
+	("Choi, Zoe Man Suen"),
+	("Choi, Chi Man"),
+	("Sia, Soetikno"),
+	("Yuanita, Jou Christine"),
+	("Yongki, Jou"),
+	("Lee, Kyung Hwa"),
+	("Go, Feilensia Sularmo"),
+	("Youvita, Elisabeth"),
+	("Youvito, Brian"),
+	("Fei Joe Jeng"),
+	("Anggraini, Monica"),
+	("Park Seongbeom"),
+	("Park Yuna"),
+	("Alain Oktavianus Siauw"),
+	("Angelina Ong"),
+	("Febriantus Edward"),
+	("Haripin, Sukiatna")
+;
+
+INSERT INTO aboard
+(
+	no_tiket,
+	nama,
+	no_kursi,
+	no_penerbangan,
+	departure_time
+)
+VALUES
+	(7242117777256,	"Choi, Zoe Man Suen","1A","QZ8501",'2014-12-28 05:20:00'),
+	(7242117777257,	"Choi, Chi Man","1B","QZ8501",'2014-12-28 05:20:00'),
+	(7242117777258,	"Sia, Soetikno","1C","QZ8501",'2014-12-28 05:20:00'),
+	(7242117777259,	"Yuanita, Jou Christine","1D","QZ8501",'2014-12-28 05:20:00'),
+	(7242117777260,	"Yongki, Jou","2A","QZ8501",'2014-12-28 05:20:00'),
+	(7242117777261,	"Lee, Kyung Hwa","2B","QZ8501",'2014-12-28 05:20:00'),
+	(7242117777262,	"Go, Feilensia Sularmo","2C","QZ8501",'2014-12-28 05:20:00'),
+	(7242117777263,	"Youvita, Elisabeth","2D","QZ8501",'2014-12-28 05:20:00'),
+	(7242117777264,	"Youvito, Brian","3A","QZ8501",'2014-12-28 05:20:00'),
+	(7242117777265,	"Fei Joe Jeng","3B","QZ8501",'2014-12-28 05:20:00'),
+	(7242117777266,	"Anggraini, Monica","3C","QZ8501",'2014-12-28 05:20:00'),
+	(7242117777267,	"Park Seongbeom","3D","QZ8501",'2014-12-28 05:20:00'),
+	(7242117777268,	"Park Yuna","4A","QZ8501",'2014-12-28 05:20:00'),
+	(7242117777269,	"Alain Oktavianus Siauw","4B","QZ8501",'2014-12-28 05:20:00'),
+	(7242117777270,	"Angelina Ong","4C","QZ8501",'2014-12-28 05:20:00'),
+	(7242117777271,	"Febriantus Edward","4D","QZ8501",'2014-12-28 05:20:00'),
+	(7242117777272,	"Haripin, Sukiatna","5A","QZ8501",'2014-12-28 05:20:00')
+
+;
