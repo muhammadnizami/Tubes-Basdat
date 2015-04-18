@@ -123,7 +123,7 @@ VALUES
 	("PK-AXE",300,"Boeing 737","BAIK",3),
 	("9M-BXC",150,"A330","BAIK",3),
 	("9V-POW",300,"Boeing 737","BAIK",4),
-	("9V-PQR",150","A330","BAIK",4),
+	("9V-PQR",150,"A330","BAIK",4),
 	("PK-ALO",300,"Boeing 737","BAIK",1),
 	("PK-APO",300,"Boeing 737","BAIK",2),
 	("PK-OPO",150,"A330","BAIK",5),
@@ -137,7 +137,7 @@ VALUES
 	("9M-BXX",200,"A330","BAIK",3),
 	("PK-WAL",140,"A330",BAIK,1),
 	("PK-WEI",100,"Cessna","BAIK",5),
-	("PK-WAX",140,"Cessna","BAIK",2),
+	("PK-WAX",140,"Cessna","BAIK",2)
 ;
 
 INSERT INTO a330(
@@ -147,6 +147,14 @@ INSERT INTO a330(
 )
 VALUES
 	("PK-AXC",1010,0)
+	("PK-AXC",1011,1),
+	("9M-BXC",1012,3),
+	("9V-PQR",1032,4),
+	("PK-OPO",1011,1),
+	("PK-XXX",1033,5),
+	("PK-BBC",1009,6),
+	("9M-BXX",1040,1),
+	("PK-WAL",1050,4)
 ;
 
 INSERT INTO cessna(
@@ -154,7 +162,12 @@ INSERT INTO cessna(
 	pabrik
 )
 VALUES
-	("PK-AXD","TRI ANGKASA")
+	("PK-AXD","TRI ANGKASA"),
+	("PK-WOL","DWI ANGKASA"),
+	("PK-OLO","TUNGGAL PUTRA ANGKASA"),
+	("9V-XXX","TRI ANGKASA"),
+	("PK-WEI","PANCA TUNGGAL"),
+	("PK-WAX","DOA IBU")
 ;
 
 INSERT INTO boeing_737(
@@ -163,7 +176,26 @@ INSERT INTO boeing_737(
 	no_produksi
 )
 VALUES
-	("PK-AXE",'2010-01-01',1011)
+	("PK-AXC","2003-01-01",2001),
+	("PK-AXD","2002-01-12",2002),
+	("PK-AXE","2000-10-29",2010),
+	("9M-BXC","2001-12-31",2040),
+	("9V-POW","2002-01-01",2044),
+	("9V-PQR","2002-01-02",2045),
+	("PK-ALO","2002-01-03",2046),
+	("PK-APO","2002-01-10",2047),
+	("PK-OPO","2002-12-01",2048),
+	("PK-WOL","2002-05-05",2049),
+	("PK-OLO","1999-02-01",2050),
+	("PK-XXX","2001-01-04",2061),
+	("PK-BBB","2002-01-23",2074),
+	("PK-BBC","2002-11-23",2084),
+	("9V-XXX","2002-04-01",2094),
+	("9V-ZZZ","2005-04-10",2011),
+	("9M-BXX","2006-11-18",2012),
+	("PK-WAL","2004-01-19",2013),
+	("PK-WEI","2006-02-20",2014),
+	("PK-WAX","2007-11-19",2015)
 ;
 
 
