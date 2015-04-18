@@ -188,25 +188,25 @@ INSERT INTO penerbangan (
 VALUES
 	("QZ8501","SUB","SIN"),
 	("JT588","CGK","SUB"),
-	("QZ534","SUB","PEN");
-	("ID433","BDO","SUB");
-	("JT722","SUB","BTH");
-	("QZ886","SUB","CAN");
-	("GA8609","BPN","SUB");
-	("ID351","SUB","BDO");
-	("JT268","SUB","CTS");
-	("GA790","SUB","PEN");
-	("QZ243","WUB","SUB");
-	("ID390","SUB","KLU");
-	("JT6261","DJJ","SUB");
-	("BO9871","MKQ","SUB");
-	("GA9314","BKA","SUB");
-	("BO919","BUA","SUB");
-	("ID811","MLN","SUB");
-	("SQ6515","SUB","GNS");
-	("BO2315","DEL","SUB");
-	("SQ8512","SUB","PKY");
-	("GA670","SUB","BDO");
+	("QZ534","SUB","PEN"),
+	("ID433","BDO","SUB"),
+	("JT722","SUB","BTH"),
+	("QZ886","SUB","CAN"),
+	("GA8609","BPN","SUB"),
+	("ID351","SUB","BDO"),
+	("JT268","SUB","CTS"),
+	("GA790","SUB","PEN"),
+	("QZ243","WUB","SUB"),
+	("ID390","SUB","KLU"),
+	("JT6261","DJJ","SUB"),
+	("BO9871","MKQ","SUB"),
+	("GA9314","BKA","SUB"),
+	("BO919","BUA","SUB"),
+	("ID811","MLN","SUB"),
+	("SQ6515","SUB","GNS"),
+	("BO2315","DEL","SUB"),
+	("SQ8512","SUB","PKY"),
+	("GA670","SUB","BDO")
 	
 ;
 
