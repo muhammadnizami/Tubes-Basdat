@@ -18,7 +18,11 @@ INSERT INTO landasan(
 	kapasitas_maksimum
 )
 VALUES
-	(1,10)
+	(1,10),
+	(2,10),
+	(3,10),
+	(4,10),
+	(5,10)
 ;
 
 INSERT INTO hanggar
@@ -27,7 +31,36 @@ INSERT INTO hanggar
 	no_hanggar
 )
 VALUES
-	(1,1)
+	(1,1),
+	(1,2),
+	(1,3),
+	(2,1),
+	(2,2),
+	(2,3),
+	(3,1),
+	(3,2),
+	(3,3),
+	(4,1),
+	(4,2),
+	(4,3),
+	(5,1),
+	(5,2),
+	(5,3),
+	(6,1),
+	(6,2),
+	(6,3),
+	(7,1),
+	(7,2),
+	(7,3),
+	(8,1),
+	(8,2),
+	(8,3),
+	(9,1),
+	(9,2),
+	(9,3),
+	(10,1),
+	(10,2),
+	(10,3)
 ;
 
 INSERT INTO maskapai
@@ -37,7 +70,11 @@ INSERT INTO maskapai
 )
 VALUES
 	(3,"AIR ASIA"),
-	(2,"DUMMY AIR")
+	(2,"GIA"),
+	(1,"SINGA AIR"),
+	(4,"SINGAPORE AIRLINES"),
+	(5,"BATIK AIR"),
+	(6,"BOURAQ")
 ;
 
 INSERT INTO maskapai_domestik
@@ -46,7 +83,10 @@ INSERT INTO maskapai_domestik
 	no_surat_kemenhub
 )
 VALUES
-	(3, "MENHUB/2003/LALALA")
+	(2, "MENHUB/2001/103"),
+	(1, "MENHUB/2009/33"),
+	(5, "MENHUB/2014/1919"),
+	(6, "MENHUB/1999/109")
 ;
 
 INSERT INTO maskapai_internasional
@@ -56,7 +96,8 @@ INSERT INTO maskapai_internasional
 	negara
 )
 VALUES
-	(2,"SUB/1995/LALALA","US")
+	(3,"SUB/1995/2","MY"),
+	(4,"SUB/2005/23,"SG")
 ;
 
 INSERT INTO memiliki_tempat_hanggar
