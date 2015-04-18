@@ -118,9 +118,26 @@ INSERT INTO pesawat(
 	no_perusahaan
 )
 VALUES
-	("PK-AXC",150,"A330","BAIK",3),
+	("PK-AXC",150,"A330","RUSAK",3),
 	("PK-AXD",150,"Cessna","BAIK",2),
-	("PK-AXE",300,"Boeing 737","BAIK",3)
+	("PK-AXE",300,"Boeing 737","BAIK",3),
+	("9M-BXC",150,"A330","BAIK",3),
+	("9V-POW",300,"Boeing 737","BAIK",4),
+	("9V-PQR",150","A330","BAIK",4),
+	("PK-ALO",300,"Boeing 737","BAIK",1),
+	("PK-APO",300,"Boeing 737","BAIK",2),
+	("PK-OPO",150,"A330","BAIK",5),
+	("PK-WOL",140,"Cessna","BAIK",6),
+	("PK-OLO",130,"Cessna","RUSAK",6),
+	("PK-XXX",150,"A330","BAIK",5),
+	("PK-BBB",300,"Boeing 737","BAIK",1),
+	("PK-BBC",150,"A330","BAIK",2),
+	("9V-XXX",140,"Cessna","BAIK",4),
+	("9V-ZZZ",300,"Boeing 737","BAIK,4),
+	("9M-BXX",200,"A330","BAIK",3),
+	("PK-WAL",140,"A330",BAIK,1),
+	("PK-WEI",100,"Cessna","BAIK",5),
+	("PK-WAX",140,"Cessna","BAIK",2),
 ;
 
 INSERT INTO a330(
@@ -156,7 +173,8 @@ INSERT INTO penerbangan (
 	tujuan			#IATA AIRPORT CODE
 )
 VALUES
-	("QZ8501","SUB","SIN")
+	("QZ8501","SUB","SIN"),
+	
 ;
 
 INSERT INTO keberangkatan
