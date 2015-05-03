@@ -1,1 +1,2 @@
-
+CREATE INDEX arrival_time_idx ON keberangkatan(arrival_time);
+CREATE INDEX departure_time_idx ON keberangkatan(departure_time);
