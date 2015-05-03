@@ -1,2 +1,4 @@
 CREATE INDEX arrival_time_idx ON keberangkatan(arrival_time);
 CREATE INDEX departure_time_idx ON keberangkatan(departure_time);
+CREATE INDEX nama_idx ON maskapai(nama);
+CREATE INDEX jenis_idx ON pesawat(jenis);
